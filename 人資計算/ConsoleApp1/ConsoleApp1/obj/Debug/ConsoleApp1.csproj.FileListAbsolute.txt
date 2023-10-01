@@ -6,3 +6,10 @@ C:\Users\WeiWei\Desktop\C#練習\自我練習\迴圈\練習\物件導向\人資�
 C:\Users\WeiWei\Desktop\C#練習\自我練習\迴圈\練習\物件導向\人資計算\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
 C:\Users\WeiWei\Desktop\C#練習\自我練習\迴圈\練習\物件導向\人資計算\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\Users\WeiWei\Desktop\C#練習\自我練習\迴圈\練習\物件導向\人資計算\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\Users\WeiWei\Desktop\練習區\C#練習\小作品\人資計算\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\WeiWei\Desktop\練習區\C#練習\小作品\人資計算\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\WeiWei\Desktop\練習區\C#練習\小作品\人資計算\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\WeiWei\Desktop\練習區\C#練習\小作品\人資計算\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+C:\Users\WeiWei\Desktop\練習區\C#練習\小作品\人資計算\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\WeiWei\Desktop\練習區\C#練習\小作品\人資計算\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\WeiWei\Desktop\練習區\C#練習\小作品\人資計算\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

@@ -191,7 +191,7 @@ namespace Hello_World
         public List<Staff> ReadFile()
         {
             List<Staff> Staffs = new List<Staff>();
-            string path = "C:\\Users\\WeiWei\\Desktop\\練習區\\C#練習\\自我練習\\人資計算\\Staff.txt";
+            string path = "C:\\Users\\WeiWei\\Desktop\\練習區\\C#練習\\小作品\\人資計算\\Staff.txt";
             string[] result = new string[2];
             string[] separator = { "," };   //數據分割符號
 
