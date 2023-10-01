@@ -27,33 +27,33 @@ namespace Hello_World
 
             while (year == 0)
             {
-                Console.WriteLine("Please enter the year:");
+                Console.WriteLine("請輸入年份:");
                 try
                 {
                     year = Convert.ToInt32(Console.ReadLine());
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message + "Please try again");
+                    Console.WriteLine(e.Message + "請重新一遍");
                 }
             }
 
             while (month == 0)
             {
-                Console.WriteLine("Please enter the month:");
+                Console.WriteLine("請輸入月份:");
                 try
                 {
                     month = Convert.ToInt32(Console.ReadLine());
 
                     if (month < 1 || month > 12)
                     {
-                        Console.WriteLine("Month must be from 1 to 12. Please try again");
+                        Console.WriteLine("月份必須1-12月");
                         month = 0;
                     }
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message + "Please try again");
+                    Console.WriteLine(e.Message + "請重新一遍");
                 }
             }
 
@@ -63,7 +63,7 @@ namespace Hello_World
             {
                 try
                 {
-                    Console.WriteLine($"Enter Hours worked for {Staffs[i].NameofStaff}");
+                    Console.WriteLine($"\r\n輸入工作時間 {Staffs[i].NameofStaff}");
                     Staffs[i].HourWorked = Convert.ToInt32(Console.ReadLine());
                     Staffs[i].CalulatePay();
                     Console.WriteLine(Staffs[i]);
@@ -113,18 +113,18 @@ namespace Hello_World
         /*如果子類別有相同的方法，使用子類別的方法*/
         public virtual void CalulatePay()
         {
-            Console.WriteLine("CalulatePay Pay...");
+            Console.WriteLine("計算薪資...");
 
             BasicPay = hWorked * hourlyRate;
             TotalPay = BasicPay;
         }
         public override string ToString()
         {
-            return $"Name of Staff: {NameofStaff}\n" +
-                   $"Hourly rate: {hourlyRate}\n" +
-                   $"Hours worked: {HourWorked}\n" +
-                   $"Basic pay: {BasicPay}\n" +
-                   $"Total pay: {TotalPay}";
+            return $"員工名稱: {NameofStaff}\n" +
+                   $"員工時薪: {hourlyRate}\n" +
+                   $"工作時數: {HourWorked}\n" +
+                   $"基本月薪: {BasicPay}\n" +
+                   $"總薪資: {TotalPay}";
         }
     }
 
@@ -151,12 +151,12 @@ namespace Hello_World
 
         public override string ToString()
         {
-            return $"Name of Staff: {NameofStaff}\n" +
-                   $"Hourly rate: {managerHourlyRate}\n" +
-                   $"Hours worked: {HourWorked}\n" +
-                   $"Basic pay: {BasicPay}\n" +
-                   $"Allowance: {Allowance}\n" +
-                   $"Total pay: {TotalPay}";
+            return $"員工名稱: {NameofStaff}\n" +
+                   $"經理時薪: {managerHourlyRate}\n" +
+                   $"工作時數: {HourWorked}\n" +
+                   $"基本月薪: {BasicPay}\n" +
+                   $"加班津貼: {Allowance}\n" +
+                   $"總薪資: {TotalPay}";
         }
     }
 
@@ -177,12 +177,12 @@ namespace Hello_World
         }
         public override string ToString()
         {
-            return $"Name of Staff: {NameofStaff}\n" +
-                   $"Admin hourly rate: {adminHourlyRate}\n" +
-                   $"Hours worked: {HourWorked}\n" +
-                   $"Basic pay: {BasicPay}\n" +
-                   $"overtimeRate: {Overtime}\n" +
-                   $"Total pay: {TotalPay}";
+            return $"員工名稱: {NameofStaff}\n" +
+                   $"Admin時薪: {adminHourlyRate}\n" +
+                   $"工作時數: {HourWorked}\n" +
+                   $"基本月薪: {BasicPay}\n" +
+                   $"加班津貼: {Overtime}\n" +
+                   $"總薪資: {TotalPay}";
         }
     }
 
@@ -223,6 +223,7 @@ namespace Hello_World
         }
     }
 
+    /*依照員工名稱創建不同的Txt*/
     class PaySlip
     {
         private int month;
@@ -249,30 +250,32 @@ namespace Hello_World
 
                 using (StreamWriter sw = new StreamWriter(path))
                 {
-                    sw.WriteLine($"PAYSKIP FOR {(MonthsOfYear)month} {year}");
+                    sw.WriteLine($"工資計算:  {year} / {month}");
                     sw.WriteLine("=========================================");
-                    sw.WriteLine($"Name of Staff: {s.NameofStaff}");
-                    sw.WriteLine($"Hours Worked: {s.HourWorked}");
+                    sw.WriteLine($"員工名稱: {s.NameofStaff}");
+                    sw.WriteLine($"工作時數: {s.HourWorked}");
                     sw.WriteLine("");
-                    sw.WriteLine($"Basic Pay: {s.BasicPay:C}");
+                    sw.WriteLine($"基本月薪: {s.BasicPay:C}");
 
                     if (s.GetType() == typeof(Manager))
                     {
-                        sw.WriteLine($"Allowance: {((Manager)s).Allowance:C}");
+                        sw.WriteLine($"主管加班津貼: {((Manager)s).Allowance:C}");
                     }
                     else if (s.GetType() == typeof(Admin))
                     {
-                        sw.WriteLine($"Overtime: {((Admin)s).Overtime:C}");
+                        sw.WriteLine($"Admin加班津貼: {((Admin)s).Overtime:C}");
                     }
                     sw.WriteLine("");
                     sw.WriteLine("=========================================");
-                    sw.WriteLine($"Total Pay: {s.TotalPay}");
+                    sw.WriteLine($"總薪資: {s.TotalPay}");
                     sw.WriteLine("=========================================");
 
                     sw.Close();
                 }
             }
         }
+
+        /*工作時數< 10*/
         public void GenerateSummary(List<Staff> Staffs)
         {
             var result =
@@ -285,12 +288,12 @@ namespace Hello_World
 
             using (StreamWriter sw = new StreamWriter(path))
             {
-                sw.WriteLine("Staff with less than 10 working hours");
+                sw.WriteLine("員工工作時數小於10小時");
                 sw.WriteLine("");
 
                 foreach (var r in result)
                 {
-                    sw.WriteLine($"Name of Staff: {r.NameofStaff}, Hours Worked: {r.HourWorked}");
+                    sw.WriteLine($"員工名稱: {r.NameofStaff}, 工作時數: {r.HourWorked}");
                 }
 
                 sw.Close();

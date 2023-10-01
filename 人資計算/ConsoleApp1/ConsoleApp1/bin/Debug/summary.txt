@@ -1,2 +1,3 @@
-Staff with less than 10 working hours
+員工工作時數小於10小時
 
+員工名稱: Guo, 工作時數: 2
