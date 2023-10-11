@@ -15,3 +15,6 @@ Guo,Admin
 4.依照各員工名稱創建不同的txt  
 創建的檔案會在: C:\Users\WeiWei\Desktop\練習區\C#練習\小作品\人資計算\ConsoleApp1\ConsoleApp1\bin\Debug  
 5.summary.txt是工作時數小於十小時的員工
+
+成功的話檔案內容會是這樣
+![image](https://github.com/BigNose-WeiWei/SalaryCalculation/assets/25976243/30124e00-c9a7-4b3f-b0c6-889a4f91a56c)
